@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
@@ -50,3 +51,10 @@ app.listen(port);
 console.log('---------------------------------');
 console.log('Server running on port: ' + port);
 console.log('---------------------------------');
+=======
+console.log('hi there');
+
+hello
+
+yo there
+>>>>>>> 6f6c6a4288db37d3ba56a8c5d83606c45193413c
