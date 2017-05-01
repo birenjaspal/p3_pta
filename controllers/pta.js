@@ -8,7 +8,7 @@ var Events = require('../models/events.js');
 
 //GET ROUTE=================================================================================
 router.get('/', function(req, res){
-    .find({}, function(err, foundEvents){
+    Events.find({}, function(err, foundEvents){
         res.json(foundEvents);
     });
 });
