@@ -32,7 +32,7 @@ router.delete('/:id', function(req, res){
 //UPDATE ROUTE================================================================================
 router.put('/:id', function(req, res){
     Events.findByIdAndUpdate(req.params.id, req.body, {new:true}, function(err, updatedEvent){
-        res.json(updatedEevnt);
+        res.json(updatedEvent);
     });
 });
 
