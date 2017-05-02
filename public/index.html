@@ -2,16 +2,29 @@
 <html ng-app="OurApp">
     <head>
         <meta charset="utf-8">
-        <title>PTA</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-        <script src="/js/app.js" charset="utf-8"></script>
-
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+        <script src="js/app.js" charset="utf-8"></script>
     </head>
-
     <body ng-controller="OurController as ctrl">
-        {{2+2}}
 
-        Hello there
+            <ul ng-click="ctrl.updateEvent(event)" ng-repeat="event in ctrl.events">
+                <li>{{event.name}}</li>
+                <li>{{event.location}}</li>
+                <li>{{event.date}}</li>
+                <li>{{event.isAttending}}</li>
+            </ul>
+
+
+            <form ng-submit="ctrl.createEvent()">
+
+                <input type="text" ng-model="ctrl.name" placeholder="Name"/><br>
+                <input type="text" ng-model="ctrl.location" placeholder="Location"/><br>
+                <input type="date" ng-model="ctrl.date"><br>
+                <input type="text" ng-model="ctrl.isAttending" placeholder="Accept/Decline"/><br>
+
+                <input type="submit" value="List New Event"/>
+            </form>
 
     </body>
 </html>
