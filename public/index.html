@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html ng-app="PTAApp">
     <head>
         <meta charset="utf-8">
@@ -10,7 +9,7 @@
     </head>
     <body ng-controller="MainController as main">
 
-        <div class="contianer">
+        <div class="container">
 
         </div>
 
@@ -29,7 +28,7 @@
                 <form ng-submit="main.updateEvent(event)" ng-if="main.editableEventId === event._id">
                     <input type="text" ng-model="event.name" placeholder="Name"/><br/>
                     <input type="text" ng-model="event.location" placeholder="location"/><br/>
-                    <input type="date" ng-model="event.date"/><br/>
+                    <input type="text" ng-model="event.date" placeholder="date"/><br/>
                     <input type="text" ng-model="event.isAttending" placeholder="Attending?"/><br/>
                     <input type="submit" value="Update Event"/>
                 </form>
@@ -41,7 +40,7 @@
         <form ng-submit="main.create()">
             <input type="text" ng-model="main.name" placeholder="Name"/><br/>
             <input type="text" ng-model="main.location" placeholder="Location"/><br/>
-            <input type="date" ng-model="main.date"/><br/>
+            <input type="text" ng-model="main.date" placeholder="Date"/><br/>
             <input type="text" ng-model="main.isAttending" placeholder="Attending?"/><br/>
             <input type="submit" value="List Event"/>
         </form>
