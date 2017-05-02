@@ -1,73 +1,60 @@
-//SET UP ANGULAR & CONTROLLER =====================================
+var app = angular.module('PTAApp', []);
 
-var app = angular.module('OurApp', []);
-
-app.controller('OurController', ['$http', function($http){
+app.controller('MainController', ['$http', function($http){
     var controller = this;
 
-
-//GET ======================================================================
-
-    this.getEvents = function(){
-        $http({
-            method:'GET',
-            url: 'http://localhost:3000/events',
-        }).then(function(response){
-            controller.events = response.data;
-        }, function(){
-            console.log('error');
-        });
-    };
-
-    this.getEvents();
-
-//CREATE NEW =============================================================
-    this.createEvent = function(){
+//CREATE NEW==================================================================
+    this.create = function(){
         $http({
             method:'POST',
-            url: 'http://localhost:3000/events',
+            url:'/events',
             data: {
-                name: this.description,
+                name: this.name,
                 location: this.location,
                 date: this.date,
                 isAttending: this.isAttending
             }
         }).then(function(response){
             controller.getEvents();
-        }, function(){
-            console.log('error');
         });
     };
 
-//UPDATE ===================================================================
-    this.updateEvent = function(event){
+//DELETE=======================================================================
+    this.deleteEvent = function(id){
         $http({
-            method:'PUT',
-            url: 'http://localhost:3000/events/' + event._id,
-            data: {
-                name: this.description,
-                location: this.location,
-                date: this.date,
-                isAttending: this.isAttending
-            }
+            method:'DELETE',
+            url:'/events/' + id
         }).then(function(response){
             controller.getEvents();
-        }, function(){
-            console.log('error');
+        });
+    };
+
+//UPDATE======================================================================
+    this.showEdit = function(id){
+        this.editableEventId = id
+    }
+
+    this.updateEvent = function(events){
+        $http({
+            method:'PUT',
+            url:'/events/' + event._id,
+            data: events
+        }).then(function(response){
+            controller.editableEventId = null;
+            controller.getEvents();
         });
     }
 
-//DELETE ==================================================================
-
-    this.deleteEvent = function(event){
-      $http({
-        method: 'DELETE',
-        url: 'http://localhost:3000/events/' + event._id,
-      }).then(function(response){
-        controller.getEvents();
-      }, function(err){
-      });
+//GET========================================================================
+    this.getEvents = function(){
+        $http({
+            method:'GET',
+            url:'/events'
+        }).then(function(response){
+            controller.eventss = response.data;
+        });
     };
+    this.getEvents();
 
-//========================================================================
+//END=========================================================================
 }]);
