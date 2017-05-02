@@ -28,7 +28,7 @@ app.controller('OurController', ['$http', function($http){
             url: 'http://localhost:3000/events',
             data: {
                 name: this.description,
-                location: this.complete,
+                location: this.location,
                 date: this.date,
                 isAttending: this.isAttending
             }
@@ -46,7 +46,7 @@ app.controller('OurController', ['$http', function($http){
             url: 'http://localhost:3000/events/' + event._id,
             data: {
                 name: this.description,
-                location: this.complete,
+                location: this.location,
                 date: this.date,
                 isAttending: this.isAttending
             }

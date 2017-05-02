@@ -7,6 +7,10 @@ var methodOverride = require('method-override');
 var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/pta';
 port = process.env.PORT || 3000;
 
+app.use(bodyParser.json());
+
+var seedController = require('./controllers/seedController');
+app.use('/seed', seedController);
 
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended:false}));
@@ -25,6 +29,11 @@ app.use('/sessions', sessionsController);
 
 var ptaController = require('./controllers/pta.js');
 app.use('/pta', ptaController);
+
+var eventsController = require('./controllers/events.js');
+app.use('/events', ptaController);
+
+
 
 app.get('/', function(req, res){
     res.render('index.ejs', {
