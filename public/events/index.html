@@ -13,7 +13,7 @@
 
 
         <ul>
-            <li ng-repeat="event in main.eventss" ng-click="main.showEdit(event._id)">
+            <li ng-repeat="event in main.events" ng-click="main.showEdit(event._id)">
                 <ul ng-if="main.editableEventId !== event._id">
                     <li>Name: {{event.name}}</li>
                     <li>Location: {{event.location}}</li>
