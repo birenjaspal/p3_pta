@@ -16,35 +16,28 @@
 
         <h1>EVENT LISTING</h1>
 
-
-        <div>
+        <ul>
             <li ng-repeat="event in main.events" ng-click="main.showEdit(event._id)">
                 <ul ng-if="main.editableEventId !== event._id">
                     <li>Name: {{event.name}}</li>
-                    <li>Location: {{event.location}}</li>
-                    <li>Date: {{event.date}}</li>
-                    <li>Attending: {{event.isAttending}}</li>
+                    <li>Date: {{event.location}}</li>
+                    <li>Location: {{event.date}}</li>
                 </ul>
-                <form ng-submit="main.updateEvent(event)" ng-if="main.editableEventId === event._id">
-                    <input type="text" ng-model="event.name" placeholder="Name"/><br/>
-                    <input type="text" ng-model="event.location" placeholder="location"/><br/>
-                    <input type="text" ng-model="event.date" placeholder="date"/><br/>
-                    <input type="text" ng-model="event.isAttending" placeholder="Attending?"/><br/>
+                <form ng-submit="main.updateMousse(mousse)" ng-if="main.editableMousseId === mousse._id">
+                    <input type="text" ng-model="mousse.name" placeholder="Name"/><br/>
+                    <input type="text" ng-model="mousse.location" placeholder="Location"/><br/>
+                    <input type="text" ng-model="mousse.date" placeholder="Date"/><br/>
                     <input type="submit" value="Update Event"/>
                 </form>
-                <button ng-click="main.deleteEvent(event._id)">Delete</button>
+                <button ng-click="main.deleteMousse(mousse._id)">Delete</button>
             </li>
-        </div>
-
-
+        </ul>
         <form ng-submit="main.create()">
-            <input type="text" ng-model="main.name" placeholder="Name"/><br/>
+            <input type="text" ng-model="main.name" placeholder="the Name"/><br/>
             <input type="text" ng-model="main.location" placeholder="Location"/><br/>
             <input type="text" ng-model="main.date" placeholder="Date"/><br/>
-            <input type="text" ng-model="main.isAttending" placeholder="Attending?"/><br/>
-            <input type="submit" value="List Event"/>
+            <input type="submit" value="Create Event"/>
         </form>
-
 
 
     </body>

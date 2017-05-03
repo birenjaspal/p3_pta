@@ -19,7 +19,6 @@ app.use(bodyParser.urlencoded({extended:false}));
 //     resave: false,
 //     saveUninitialized: false
 // }));
-app.use(express.static("public"));
 
 // var usersController = require('./controllers/users.js');
 // app.use('/users', usersController);
@@ -32,7 +31,6 @@ app.use(express.static("public"));
 //     resave: false,
 //     saveUninitialized: false
 // }));
-app.use(express.static("public"));
 //
 // var usersController = require('./controllers/users.js');
 // app.use('/users', usersController);

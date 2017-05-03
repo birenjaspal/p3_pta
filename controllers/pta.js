@@ -1,13 +1,12 @@
 var express = require('express');
 var router = express.Router();
-<<<<<<< HEAD
+
 // var bcrypt = require('bcrypt');
 var Users = require('../models/users.js');
 // var session = require('express-session');
 
-=======
 var Events = require('../models/events.js')
->>>>>>> 8108fa12619ed424550cdca4dee9ea774bcf646f
+
 //insert routes here
 
 //GET ROUTE=================================================================================
