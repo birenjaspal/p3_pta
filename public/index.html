@@ -9,7 +9,7 @@
         <script src="./js/app.js" charset="utf-8"></script>
     </head>
     <body ng-controller="MainController as main">
-<h1> test header 2</h1>
+
         <div class="container">
 
         </div>
@@ -24,17 +24,17 @@
                     <li>Date: {{event.location}}</li>
                     <li>Location: {{event.date}}</li>
                 </ul>
-                <form ng-submit="main.updateMousse(mousse)" ng-if="main.editableMousseId === mousse._id">
-                    <input type="text" ng-model="mousse.name" placeholder="Name"/><br/>
-                    <input type="text" ng-model="mousse.location" placeholder="Location"/><br/>
-                    <input type="text" ng-model="mousse.date" placeholder="Date"/><br/>
+                <form ng-submit="main.updateEvent(event)" ng-if="main.editableEventId === event._id">
+                    <input type="text" ng-model="event.name" placeholder="Name"/><br/>
+                    <input type="text" ng-model="event.location" placeholder="Location"/><br/>
+                    <input type="text" ng-model="event.date" placeholder="Date"/><br/>
                     <input type="submit" value="Update Event"/>
                 </form>
-                <button ng-click="main.deleteMousse(mousse._id)">Delete</button>
+                <button ng-click="main.deleteEvent(event._id)">Delete</button>
             </li>
         </ul>
         <form ng-submit="main.create()">
-            <input type="text" ng-model="main.name" placeholder="the Name"/><br/>
+            <input type="text" ng-model="main.name" placeholder="Name"/><br/>
             <input type="text" ng-model="main.location" placeholder="Location"/><br/>
             <input type="text" ng-model="main.date" placeholder="Date"/><br/>
             <input type="submit" value="Create Event"/>

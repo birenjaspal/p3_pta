@@ -4,6 +4,7 @@ var eventSchema = mongoose.Schema({
     name: String,
     location: String,
     date: String,
+    Attendees: [],
 });
 
 var Events = mongoose.model('Event', eventSchema);
