@@ -2,8 +2,6 @@ var app = angular.module('PTAApp', []);
 
 app.controller('MainController', ['$http', function($http){
     var controller = this;
-
-//CREATE NEW==================================================================
     this.create = function(){
         $http({
             method:'POST',
@@ -19,7 +17,6 @@ app.controller('MainController', ['$http', function($http){
         });
     };
 
-//DELETE=======================================================================
     this.deleteEvent = function(id){
         $http({
             method:'DELETE',
@@ -29,7 +26,6 @@ app.controller('MainController', ['$http', function($http){
         });
     };
 
-//UPDATE======================================================================
     this.showEdit = function(id){
         this.editableEventId = id
     }
@@ -45,16 +41,13 @@ app.controller('MainController', ['$http', function($http){
         });
     }
 
-//GET========================================================================
     this.getEvents = function(){
         $http({
             method:'GET',
             url:'/events'
         }).then(function(response){
-            controller.events = response.data;
+            controller.eventss = response.data;
         });
     };
     this.getEvents();
-
-//END=========================================================================
 }]);

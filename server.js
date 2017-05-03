@@ -27,11 +27,11 @@ app.use(express.static("public"));
 // var sessionsController = require('./controllers/sessions.js');
 // app.use('/sessions', sessionsController);
 
-var ptaController = require('./controllers/pta.js');
+var eventsController = require('./controllers/events.js');
 // app.use('/pta', ptaController);
 
 // var eventsController = require('./controllers/events.js');
-app.use('/', ptaController);
+app.use('/', eventsController);
 
 
 
