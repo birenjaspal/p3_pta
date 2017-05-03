@@ -51,7 +51,7 @@ app.controller('MainController', ['$http', function($http){
             method:'GET',
             url:'/events'
         }).then(function(response){
-            controller.eventss = response.data;
+            controller.events = response.data;
         });
     };
     this.getEvents();

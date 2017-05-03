@@ -14,18 +14,49 @@ app.use('/seed', seedController);
 
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended:false}));
+<<<<<<< HEAD
 
 app.use(express.static("public"));
+=======
+// app.use(session({
+//     secret: "feedmeseymour", //some random string
+//     resave: false,
+//     saveUninitialized: false
+// }));
+app.use(express.static("public"));
+//
+// var usersController = require('./controllers/users.js');
+// app.use('/users', usersController);
+//
+// var sessionsController = require('./controllers/sessions.js');
+// app.use('/sessions', sessionsController);
+>>>>>>> 428fc859ee7484befad465d7c3e4f2a1cc06d724
 
 var ptaController = require('./controllers/pta.js');
-app.use('/pta', ptaController);
+// app.use('/pta', ptaController);
 
-var eventsController = require('./controllers/events.js');
-app.use('/events', ptaController);
-
-
+// var eventsController = require('./controllers/events.js');
+app.use('/', ptaController);
 
 
+
+<<<<<<< HEAD
+
+=======
+app.get('/', function(req, res){
+    res.render('index.ejs', {
+        // currentUser: req.session.currentuser
+    });
+});
+
+// app.get('/app', function(req, res){
+//     if(req.session.currentuser){
+//         res.send('the party');
+//     } else {
+//         res.redirect('/sessions/new');
+//     }
+// });
+>>>>>>> 428fc859ee7484befad465d7c3e4f2a1cc06d724
 
 mongoose.connect(mongoUri);
 
