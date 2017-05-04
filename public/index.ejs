@@ -21,8 +21,8 @@
             <li ng-repeat="event in main.events" ng-click="main.showEdit(event._id)">
                 <ul ng-if="main.editableEventId !== event._id">
                     <li>Name: {{event.name}}</li>
-                    <li>Date: {{event.location}}</li>
-                    <li>Location: {{event.date}}</li>
+                    <li>Location: {{event.location}}</li>
+                    <li>Date: {{event.date}}</li>
                 </ul>
                 <form ng-submit="main.updateEvent(event)" ng-if="main.editableEventId === event._id">
                     <input type="text" ng-model="event.name" placeholder="Name"/><br/>
