@@ -4,6 +4,7 @@
     <% include ../partials/head %>
     <meta charset="utf-8">
     <title>PTA</title>
+    <link rel="stylesheet" href="/css/forms.css">
   </head>
 
     <header class="header">
@@ -16,7 +17,7 @@
         <div class="topbar-right" >
 
             <!-- <a href="/sessions/new">Log In</a> -->
-            <form action="/sessions" method="POST">
+            <form action="/sessions" method="POST" class="form">
                 <input type="text" name="username" placeholder="username"/>
                 <input type="password" name="password" placeholder="password"/>
                 <input type="submit" value="Log In" />
