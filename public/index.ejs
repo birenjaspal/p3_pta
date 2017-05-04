@@ -15,7 +15,7 @@
         </div>
 
 
-        <h1>EVENT LISTING</h1>
+        <h1>Event Listing</h1>
 
         <ul>
             <li ng-repeat="event in main.events" ng-click="main.showEdit(event._id)">
@@ -23,7 +23,6 @@
                     <li>Name: {{event.name}}</li>
 
                     <li>location: {{event.location}}</li>
-
                     <li>Date: {{event.date}}</li>
                 </ul>
                 <form ng-submit="main.updatedEvent(event)" ng-if="main.editableEventId === event._id">

@@ -1,11 +1,85 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <% include partials/head.ejs %>
     <meta charset="utf-8">
     <title>WELCOME To THE PTA</title>
-  </head>
-  <body>
+</head>
+<body>
     <% include partials/header.ejs %>
-  </body>
-</html>
+
+    <!DOCTYPE html>
+    <html ng-app="PTAApp">
+    <head>
+        <meta charset="utf-8">
+        <title>title</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="/css/forms.css">
+        <link rel="stylesheet" href="/css/forms2.css">
+        <script src="./js/app.js" charset="utf-8"></script>
+    </head>
+    <body ng-controller="MainController as main">
+
+        <% if(currentUser) { %>
+
+
+
+
+
+            <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                <form ng-submit="main.create()" class="form2">
+                    <input type="text" ng-model="main.name" placeholder="Name"/><br/>
+                    <input type="text" ng-model="main.location" placeholder="Location"/><br/>
+                    <input type="text" ng-model="main.date" placeholder="Date"/><br/>
+                    <input type="submit" value="Create Event"/>
+                </form>
+            </div>
+
+
+
+
+
+
+
+            <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+                <h1>EVENT LISTING</h1>
+
+
+                <ul>
+                    <div ng-repeat="event in main.events" ng-click="main.showEdit(event._id)">
+                        <ul ng-if="main.editableEventId !== event._id">
+                            <li>Name: {{event.name}}</li>
+                            <li>Location: {{event.location}}</li>
+                            <li>Date: {{event.date}}</li>
+                            <li>Attendees {{event.attendees}}</li>
+                        </ul>
+
+                        <form ng-submit="main.updateEvent(event)" ng-if="main.editableEventId === event._id">
+                            <input type="text" ng-model="event.name" placeholder="Name"/><br/>
+                            <input type="text" ng-model="event.location" placeholder="Location"/><br/>
+                            <input type="text" ng-model="event.date" placeholder="Date"/><br/>
+                            Attending: <input type="radio" name="Attending" value="button1">
+                            Declined: <input type="radio" name="Attending" value="button2">
+                            Undecided: <input type="radio" name="Attending" value="button3">
+                            <input type="submit" value="Update Event"/>
+                        </form>
+                        <button ng-click="main.deleteEvent(event._id)">Delete</button>
+                    </div>
+                </ul>
+            </div>
+
+
+
+
+
+
+
+            <% } else { %>
+                <h1> Non User Section </h1>
+                <% } %>
+
+            </body>
+
+            </html>
