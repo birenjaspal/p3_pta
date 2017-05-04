@@ -1,0 +1,22 @@
+#indexhead, #contact, #events{
+    background-image: url("/images/jumbo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#toptext a{
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#bottomtext p{
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#aboutimg1, #aboutimg2 {
+    height:250px;
+}

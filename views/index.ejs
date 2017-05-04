@@ -1,86 +1,182 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="PTAApp">
 <head>
+    <% include partials/header.ejs %>
     <% include partials/head.ejs %>
     <meta charset="utf-8">
-    <title>WELCOME To THE PTA</title>
+    <title>title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/forms2.css">
+    <script src="./js/app.js" charset="utf-8"></script>
 </head>
-<body>
-    <% include partials/header.ejs %>
 
-change
-    <!DOCTYPE html>
-    <html ng-app="PTAApp">
-    <head>
-        <meta charset="utf-8">
-        <title>title</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="/css/forms.css">
-        <link rel="stylesheet" href="/css/forms2.css">
-        <script src="./js/app.js" charset="utf-8"></script>
-    </head>
-    <body ng-controller="MainController as main">
-
-        <% if(currentUser) { %>
+<body ng-controller="MainController as main">
+        <!-- Top Section-->
+        <div class="w3-row">
+          <div class="w3-half w3-center" style="height:700px" id="indexhead">
+            <div class="w3-padding-64">
+              <h1></h1>
+            </div>
+            <div class="w3-padding-16" id="toptext">
+              <a href="#" class="w3-button w3-block w3-hover-blue-grey w3-padding-16 class="w3-blue" style="text-shadow:1px 1px 0 #444">About Us</a>
+              <a href="#photos" class="w3-button w3-block w3-hover-blue w3-padding-16 class="w3-blue" style="text-shadow:1px 1px 0 #444">Photos</a>
+              <a href="#events" class="w3-button w3-block w3-hover-cyan w3-padding-16 class="w3-blue" style="text-shadow:1px 1px 0 #444">Events</a>
+              <a href="#contact" class="w3-button w3-block w3-hover-teal w3-padding-16 class="w3-blue" style="text-shadow:1px 1px 0 #444">Contact Us</a>
+            </div>
+        </div>
 
 
+        <div class="w3-half w3-indigo w3-container w3-panel w3-border w3-hover-border-yellow" style="height:700px">
 
+            <div class="w3-padding-64 w3-center">
 
+              <h1 style="margin-top:-10px;"">About The PTA</h1>
 
-            <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
-                <form ng-submit="main.create()" class="form2">
-                    <input type="text" ng-model="main.name" placeholder="Name"/><br/>
-                    <input type="text" ng-model="main.location" placeholder="Location"/><br/>
-                    <input type="text" ng-model="main.date" placeholder="Date"/><br/>
-                    <input type="submit" value="Create Event"/>
-                </form>
+              <img id="aboutimg1" src="http://shilohpointespta.digitalpto.com/files/2017/02/volunteer-bubbles-6.png" class="w3-margin w3-circle" alt="About PTA" style="width:50%">
+              <img id="aboutimg2" src="https://s-media-cache-ak0.pinimg.com/originals/d4/90/ab/d490ab6bf05aef51d1d122287789d693.jpg" class="w3-margin w3-circle" alt="About PTA" style="width:50%">
+
+             </div>
+        </div>
+    </div>
+
+        <!-- Middle Section -->
+        <div class="w3-row">
+
+          <div id="photos" class="w3-half w3-indigo w3-container w3-panel w3-border w3-hover-border-yellow" style="min-height:800px">
+
+            <div class="w3-padding-32">
+
+              <p style="text-align:center; font-size:30px;">Photos</p>
+
             </div>
 
+            <div class="w3-row">
+              <div class="w3-half">
+                <img src="http://centennial.dpsk12.org/wp-content/uploads/2011/12/IMG_2001.jpg" style="width:100%">
+              </div>
+              <div class="w3-half">
+                <img src="https://edsource.org/wp-content/uploads/2014/06/santaanalcap1.jpg" style="width:100%">
+              </div>
+            </div>
+            <div class="w3-row w3-hide-small">
+              <div class="w3-half">
+                <img src="http://www.q300pta.net/wp-content/uploads/2016/04/PTA_meeting_1st.jpg" style="width:100%">
+              </div>
+              <div class="w3-half">
+                <img src="http://mougins-school-pta.com/wp-content/uploads/2016/09/PTA-Meetings-500x383.jpg" style="width:100%">
+              </div>
+            </div>
+            <div class="w3-row w3-hide-small">
+              <div class="w3-half">
+                <img src="http://3.bp.blogspot.com/_nqaXFe_oK1M/S7---Wnwt5I/AAAAAAAABKk/l55UhZTNvMs/s1600/2010-04-09+school+pictures+001.jpg" style="width:100%;">
+              </div>
+              <div class="w3-half">
+                <img src="http://austinchildrensacademy.org/wp-content/uploads/2013/02/PTA-Meeting-2.jpg" style="width:100%;">
+              </div>
+            </div><br>
+          </div>
 
 
+        <div id="events" class="w3-half w3-container" style="min-height:800px">
+
+            <div class="w3-padding-64 w3-center">
 
 
+                <!-- =================================================== -->
+                <% if(currentUser) { %>
 
-
-            <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
-                <h1>EVENT LISTING</h1>
-
-
-                <ul>
-                    <div ng-repeat="event in main.events" ng-click="main.showEdit(event._id)">
-                        <ul ng-if="main.editableEventId !== event._id">
-                            <li>Name: {{event.name}}</li>
-                            <li>Location: {{event.location}}</li>
-                            <li>Date: {{event.date}}</li>
-                            <li>Attendees {{event.attendees}}</li>
-                        </ul>
-
-                        <form ng-submit="main.updateEvent(event)" ng-if="main.editableEventId === event._id">
-                            <input type="text" ng-model="event.name" placeholder="Name"/><br/>
-                            <input type="text" ng-model="event.location" placeholder="Location"/><br/>
-                            <input type="text" ng-model="event.date" placeholder="Date"/><br/>
-                            Attending: <input type="radio" name="Attending" value="button1">
-                            Declined: <input type="radio" name="Attending" value="button2">
-                            Undecided: <input type="radio" name="Attending" value="button3">
-                            <input type="submit" value="Update Event"/>
+                    <div>
+                        <form ng-submit="main.create()" class="form2">
+                            <input type="text" ng-model="main.name" placeholder="Name"/><br/>
+                            <input type="text" ng-model="main.location" placeholder="Location"/><br/>
+                            <input type="text" ng-model="main.date" placeholder="Date"/><br/>
+                            <input type="submit" value="Create Event"/>
                         </form>
-                        <button ng-click="main.deleteEvent(event._id)">Delete</button>
                     </div>
-                </ul>
+
+                    <div>
+                        <h1>EVENT LISTING</h1>
+
+
+                        <ul>
+                            <div ng-repeat="event in main.events" ng-click="main.showEdit(event._id)">
+                                <ul style="list-style:none; text-align:left;" ng-if="main.editableEventId !== event._id">
+                                    <li>Name: {{event.name}}</li>
+                                    <li>Location: {{event.location}}</li>
+                                    <li>Date: {{event.date}}</li>
+                                    <li>Attendees {{event.attendees}}</li>
+                                </ul>
+
+                                <form style=";" ng-submit="main.updateEvent(event)" ng-if="main.editableEventId === event._id">
+                                    <input type="text" ng-model="event.name" placeholder="Name"/><br/>
+                                    <input type="text" ng-model="event.location" placeholder="Location"/><br/>
+                                    <input type="text" ng-model="event.date" placeholder="Date"/><br/>
+                                    Attending: <input type="radio" name="Attending" value="button1">
+                                    Declined: <input type="radio" name="Attending" value="button2">
+                                    Undecided: <input type="radio" name="Attending" value="button3">
+                                    <input type="submit" value="Update Event"/>
+                                </form>
+                                <button ng-click="main.deleteEvent(event._id)">Delete</button>
+                            </div>
+                        </ul>
+                    </div>
+
+                    <% } else { %>
+                        <h1> Non User Section </h1>
+                        <% } %>
+
+                        <!-- ============================== -->
+
             </div>
 
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="w3-row">
+
+          <div id="contact" class="w3-half w3-dark-grey w3-container w3-center" style="height:700px">
+
+            <div class="w3-padding-64">
+              <h1 style="color:black; margin-top:80px; font-weight:bold;">Want More Info?</h1>
+            </div>
+
+            <div id="bottomtext" class="w3-padding-64">
+              <p>Stop by, or call. Get involved with your childs education!</p>
+              <p>Awesome Town, US</p>
+              <p>321-987-3456</p>
+              <p>2Cool4School@mail.edu</p>
+            </div>
+
+          </div>
+
+          <div class="w3-half w3-indigo w3-container w3-panel w3-border w3-hover-border-yellow" style="height:700px">
+            <div class="w3-padding-64 w3-padding-large">
+              <h1>Contact Us</h1>
+              <p class="w3-opacity">Send a Message for Online Support</p>
+              <form class="w3-container w3-card-2 w3-padding-32 w3-white" action="/action_page.php" target="_blank">
+                <div class="w3-section">
+                  <label>Name</label>
+                  <input class="w3-input" style="width:100%;" type="text" required name="Name">
+                </div>
+                <div class="w3-section">
+                  <label>Email</label>
+                  <input class="w3-input" style="width:100%;" type="text" required name="Email">
+                </div>
+                <div class="w3-section">
+                  <label>Message</label>
+                  <input class="w3-input" style="width:100%;" type="text" required name="Message">
+                </div>
+                <button type="submit" class="w3-button w3-teal w3-right">Send</button>
+              </form>
+            </div>
+          </div>
+        </div>
 
 
 
+    </body>
 
-
-
-            <% } else { %>
-                <h1> Non User Section </h1>
-                <% } %>
-
-            </body>
-
-            </html>
+</html>
