@@ -1,0 +1,82 @@
+<header>
+  <div class="topbar">
+    <div class="topbar-left">
+      <a id="" href="/" target="_parent" style="color: white; text-decoration: none;"><font size="5">PTA</font> </a></br>
+      <font size="1"> <i>PTA</i></font>
+    </div>
+    <div class="topbar-right">
+      <% if(currentUser) { %>
+        Welcome <%=currentUser.username%>!
+        <nav>
+          <form action="/sessions?_method=DELETE" method="POST">
+            <input type="submit" value="Logout"/>
+          </form>
+        </nav>
+        <header background-image="wificity3.jpg"
+      <body background=none>
+
+      <% } else { %>
+        <!-- <a href="/sessions/new">Log In</a> -->
+        <form action="/sessions" method="POST">
+            <input type="text" name="username" placeholder="username"/>
+            <input type="password" name="password" placeholder="password"/>
+            <input type="submit" value="Log In" />
+        </form>
+        <font size="2"> <i>Not a User Yet?  </i>Register <a href="/users/new">here</a></font>
+      <% } %>
+    </div>
+  </div>
+  <% if(currentUser) { %>
+
+
+    <!DOCTYPE html>
+    <html ng-app="PTAApp">
+        <head>
+            <meta charset="utf-8">
+            <title>title</title>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <script src="./js/app.js" charset="utf-8"></script>
+        </head>
+        <body ng-controller="MainController as main">
+
+            <div class="container">
+
+            </div>
+
+
+            <h1>EVENT LISTING</h1>
+
+            <ul>
+                <li ng-repeat="event in main.events" ng-click="main.showEdit(event._id)">
+                    <ul ng-if="main.editableEventId !== event._id">
+                        <li>Name: {{event.name}}</li>
+                        <li>Date: {{event.location}}</li>
+                        <li>Location: {{event.date}}</li>
+                    </ul>
+                    <form ng-submit="main.updateEvent(event)" ng-if="main.editableEventId === event._id">
+                        <input type="text" ng-model="event.name" placeholder="Name"/><br/>
+                        <input type="text" ng-model="event.location" placeholder="Location"/><br/>
+                        <input type="text" ng-model="event.date" placeholder="Date"/><br/>
+                        <input type="submit" value="Update Event"/>
+                    </form>
+                    <button ng-click="main.deleteEvent(event._id)">Delete</button>
+                </li>
+            </ul>
+            <form ng-submit="main.create()">
+                <input type="text" ng-model="main.name" placeholder="Name"/><br/>
+                <input type="text" ng-model="main.location" placeholder="Location"/><br/>
+                <input type="text" ng-model="main.date" placeholder="Date"/><br/>
+                <input type="submit" value="Create Event"/>
+            </form>
+
+
+        </body>
+
+    </html>
+
+
+    <% } else { %>
+      <h1> Non User Section </h1>
+      <% } %>
+</header>
