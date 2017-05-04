@@ -34,11 +34,11 @@ var controller = this;
     }
 
 //UPDATE=================================================================
-    this.updateEvent = function(events){
+    this.updateEvent = function(event){
         $http({
             method:'PUT',
             url:'/events/' + event._id,
-            data: events
+            data: event
         }).then(function(response){
             controller.editableEventId = null;
             controller.getEvents();
