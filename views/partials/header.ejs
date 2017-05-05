@@ -1,28 +1,25 @@
 <header>
   <div class="topbar">
     <div class="topbar-left">
-      <a id="" href="/" target="_parent" style="color: white; text-decoration: none;"><font size="5">PTA</font> </a></br>
-      <font size="1"> <i>PTA</i></font>
+      <a id="" href="/" target="_parent" style="color: white; text-decoration: none;"><font size="5">PTA MEMBERS PORTAL</font> </a></br>
     </div>
-    <div class="topbar-right">
+    <div style="color:white;">
       <% if(currentUser) { %>
         Welcome <%=currentUser.username%>!
         <nav>
           <form action="/sessions?_method=DELETE" method="POST">
-            <input type="submit" value="Logout"/>
+            <input style="color:black;" type="submit" value="Logout"/>
           </form>
         </nav>
-        <header background-image="wificity3.jpg"
-      <body background=none>
 
       <% } else { %>
         <!-- <a href="/sessions/new">Log In</a> -->
-        <form action="/sessions" method="POST">
+        <form style="color:black;" action="/sessions" method="POST">
             <input type="text" name="username" placeholder="username"/>
             <input type="password" name="password" placeholder="password"/>
             <input type="submit" value="Log In" />
         </form>
-        <font size="2"> <i>Not a User Yet?  </i>Register <a href="/users/new">here</a></font>
+        <font size="2"> <i>Not a User Yet?  </i>Register by clicking <a style="color:white;" href="/users/new">HERE</a></font>
       <% } %>
     </div>
   </div>

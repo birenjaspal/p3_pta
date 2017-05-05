@@ -4959,8 +4959,11 @@ a.badge:focus {
   padding-top: 30px;
   padding-bottom: 30px;
   margin-bottom: 30px;
+  margin-top: 0px;
   color: inherit;
-  background-color: green;
+  background-image: url("http://www.clipartkid.com/images/57/owl-on-branch-clip-art-clipart-best-MzCz8K-clipart.png");
+  background-repeat:no-repeat;
+  background-size: cover;
 }
 .jumbotron h1,
 .jumbotron .h1 {
