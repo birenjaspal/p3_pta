@@ -12,8 +12,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="/css/forms.css">
     <link rel="stylesheet" href="/css/forms2.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
     <script src="./js/app.js" charset="utf-8"></script>
     <script type="text/javascript" src="https://mandrillapp.com/api/docs/js/mandrill.js"></script>
      <script type="text/javascript" src="./js/send-email.js"></script>
@@ -21,10 +22,9 @@
 
 <body ng-controller="MainController as main">
         <!-- Top Section-->
-        <div class="w3-row">
+        <div class="w3-row" id="row1">
           <div class="w3-half w3-center" style="height:700px" id="indexhead">
-            <div class="w3-padding-64">
-              <h1></h1>
+            <div style="margin-top: 170px;">
             </div>
             <div class="w3-padding-16" id="toptext">
               <a href="#" class="w3-button w3-block w3-hover-blue-grey w3-padding-16" class="w3-blue" style="text-shadow:1px 1px 0 #444">About Us</a>
@@ -34,24 +34,35 @@
             </div>
         </div>
 
+//css
+        <div id="box2" class="w3-half w3-indigo w3-panel w3-border w3-hover-border-yellow" style="height:700px">
+        // <div class="w3-half w3-indigo w3-container w3-panel w3-border w3-hover-border-yellow" style="height:700px; margin:auto">
 
-        <div class="w3-half w3-indigo w3-container w3-panel w3-border w3-hover-border-yellow" style="height:700px; margin:auto">
 
             <div class="w3-padding-64 w3-center">
 
               <h1 style="margin-top:-10px;"">About The PTA</h1>
 
               <img id="aboutimg1" src="http://shilohpointespta.digitalpto.com/files/2017/02/volunteer-bubbles-6.png" class="w3-margin w3-circle" alt="About PTA" style="width:50%">
-              <img id="aboutimg2" src="https://s-media-cache-ak0.pinimg.com/originals/d4/90/ab/d490ab6bf05aef51d1d122287789d693.jpg" class="w3-margin w3-circle" alt="About PTA" style="width:50%">
+              <div class="w3-left-align w3-padding-large">
+                  <p style="text-align: center;" >Parent Teachers App (PTA) is used by millions of families, students, teachers, administrators, and business and community leaders devoted to the educational success of children and the promotion of parent involvement in schools.
+                      <br>
+                      <br>
+                  PTA prides itself on being a powerful voice for all children, a relevant resource for families and communities, and a strong advocate for public education. Membership in PTA is open to anyone who wants to be involved and make a difference for the education, health, and welfare of children and youth.</p>
+
+              </div>
 
              </div>
         </div>
     </div>
 
         <!-- Middle Section -->
-        <div class="w3-row">
+        <div class="w3-row" id="row2">
 
-          <div id="photos" class="w3-half w3-indigo w3-container w3-panel w3-border w3-hover-border-yellow" style="min-height:800px; margin:auto">
+//css
+          <div id="photos" class="w3-half w3-indigo w3-panel w3-border w3-hover-border-yellow" style="min-height:800px">
+
+         // <div id="photos" class="w3-half w3-indigo w3-container w3-panel w3-border w3-hover-border-yellow" style="min-height:800px; margin:auto">
 
             <div class="w3-padding-32">
 
@@ -86,7 +97,7 @@
           </div>
 
 
-        <div id="events" class="w3-half w3-container" style="min-height:800px">
+        <div id="events" class="w3-half" style="min-height:800px">
 
             <div class="w3-padding-64 w3-center">
 
@@ -104,7 +115,7 @@
                     </div>
 
                     <div>
-                        <h1>EVENT LISTING</h1>
+                        <h1 style="font-weight:bold" >EVENT LISTINGS</h1>
 
 
                         <ul>
@@ -132,7 +143,11 @@
                     </div>
 
                     <% } else { %>
-                        <h1>Thanks for stopping by.  Please sign in to view our upcoming events. </h1>
+
+//css update
+<h1> PLEASE LOG-IN TO VIEW EVENTS HELD </h1>
+      <h1>Thanks for stopping by.  Please sign in to view our upcoming events. </h1>
+
                         <% } %>
 
                         <!-- ============================== -->
@@ -142,9 +157,9 @@
         </div>
 
         <!-- Bottom Section -->
-        <div class="w3-row">
+        <div class="w3-row" id="row3">
 
-          <div id="contact" class="w3-half w3-dark-grey w3-container w3-center" style="height:700px">
+          <div id="contact" class="w3-half w3-dark-grey w3-center" style="height:700px">
 
             <div class="w3-padding-64">
               <h1 style="color:black; margin-top:80px; font-weight:bold;">Want More Info?</h1>
@@ -152,14 +167,17 @@
 
             <div id="bottomtext" class="w3-padding-64">
               <p>Stop by, or call. Get involved with your childs education!</p>
-              <p>Awesome Town, US</p>
+              <p>Matt is Awesome feedmeseymour blvd, USA</p>
               <p>321-987-3456</p>
               <p>2Cool4School@mail.edu</p>
             </div>
 
           </div>
 
-          <div class="w3-half w3-indigo w3-container w3-panel w3-border w3-hover-border-yellow" style="height:700px; margin: auto">
+// css update
+          <div class="w3-half w3-indigo w3-panel w3-border w3-hover-border-yellow" style="height:700px">
+
+        //  <div class="w3-half w3-indigo w3-container w3-panel w3-border w3-hover-border-yellow" style="height:700px; margin: auto">
             <div class="w3-padding-64 w3-padding-large">
               <h1>Contact Us</h1>
               <p class="w3-opacity">Send a Message for Online Support</p>
@@ -185,6 +203,8 @@
         </div>
         </div>
 
+//css update with line below
+        <% include partials/footer.ejs %>
       <style>
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */

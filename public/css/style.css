@@ -1,3 +1,8 @@
+body{
+    margin-bottom: 0px;
+    background-image: url("http://howtonestforless.com/wp-content/uploads/2013/01/Chalkboard-background.jpg");
+    background-size: cover;
+}
 #indexhead, #contact, #events{
     background-image: url("/images/jumbo.jpg");
     background-size: cover;
@@ -19,4 +24,36 @@
 
 #aboutimg1, #aboutimg2 {
     height:250px;
+}
+
+#row1, #row2, #row3{
+    height:50%;
+}
+
+#box2 {
+    padding-bottom: 3x;
+}
+
+footer{
+    background-image: url("https://eaglecountryonline.com/wp-content/uploads/2015/07/school-classroom-chalkboard-desk.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:white;
+    text-align: center;
+    height: 5em;
+    padding-top: 20px;
+    position: absolute;
+    width:100%;
+    margin-top: 0;
+}
+
+header{
+    background-image: url("https://eaglecountryonline.com/wp-content/uploads/2015/07/school-classroom-chalkboard-desk.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:black;
+    text-align: right;
+    height: 9em;
+    width:100%;
+
 }
