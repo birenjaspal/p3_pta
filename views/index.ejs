@@ -34,10 +34,7 @@
             </div>
         </div>
 
-//css
-        <div id="box2" class="w3-half w3-indigo w3-panel w3-border w3-hover-border-yellow" style="height:700px">
-        // <div class="w3-half w3-indigo w3-container w3-panel w3-border w3-hover-border-yellow" style="height:700px; margin:auto">
-
+        <div id="box2" class="w3-half w3-indigo w3-panel w3-border w3-hover-border-yellow" style="height:700px; margin:auto">
 
             <div class="w3-padding-64 w3-center">
 
@@ -59,10 +56,7 @@
         <!-- Middle Section -->
         <div class="w3-row" id="row2">
 
-//css
-          <div id="photos" class="w3-half w3-indigo w3-panel w3-border w3-hover-border-yellow" style="min-height:800px">
-
-         // <div id="photos" class="w3-half w3-indigo w3-container w3-panel w3-border w3-hover-border-yellow" style="min-height:800px; margin:auto">
+          <div id="photos" class="w3-half w3-indigo w3-panel w3-border w3-hover-border-yellow" style="min-height:800px; margin:auto">
 
             <div class="w3-padding-32">
 
@@ -144,9 +138,9 @@
 
                     <% } else { %>
 
-//css update
+
 <h1> PLEASE LOG-IN TO VIEW EVENTS HELD </h1>
-      <h1>Thanks for stopping by.  Please sign in to view our upcoming events. </h1>
+
 
                         <% } %>
 
@@ -174,10 +168,9 @@
 
           </div>
 
-// css update
-          <div class="w3-half w3-indigo w3-panel w3-border w3-hover-border-yellow" style="height:700px">
+          <div class="w3-half w3-indigo w3-panel w3-border w3-hover-border-yellow" style="height:700px; margin: auto">
 
-        //  <div class="w3-half w3-indigo w3-container w3-panel w3-border w3-hover-border-yellow" style="height:700px; margin: auto">
+
             <div class="w3-padding-64 w3-padding-large">
               <h1>Contact Us</h1>
               <p class="w3-opacity">Send a Message for Online Support</p>
@@ -203,8 +196,6 @@
         </div>
         </div>
 
-//css update with line below
-        <% include partials/footer.ejs %>
       <style>
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
@@ -271,5 +262,6 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJuObq7p3cOYi0ot8v5YzC4rW-Mde59GA&callback=initMap">
       </script>
 
+              <% include partials/footer.ejs %>
     </body>
   </html>

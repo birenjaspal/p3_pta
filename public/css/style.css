@@ -57,3 +57,19 @@ header{
     width:100%;
 
 }
+
+.blink_text {
+   display: inline;
+   animation:1s blinker linear infinite;
+   -webkit-animation:1s blinker linear infinite;
+   -moz-animation:1s blinker linear infinite;
+
+    color: red;
+   }
+
+   .topbar-right {
+   padding-top: 20px;
+   padding-right: 30px;
+   padding-bottom: 9px;
+   padding-left: 80px;
+   }
