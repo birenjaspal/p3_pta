@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var methodOverride = require('method-override');
 var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/pta';
-port = process.env.PORT || 3000;
+port = process.env.PORT || 3000; 
 
 app.use(bodyParser.json());
 
