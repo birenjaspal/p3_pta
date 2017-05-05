@@ -5,6 +5,10 @@
     <% include partials/head.ejs %>
     <meta charset="utf-8">
     <title>title</title>
+    <script
+      src="http://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -12,6 +16,8 @@
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
     <script src="./js/app.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://mandrillapp.com/api/docs/js/mandrill.js"></script>
+     <script type="text/javascript" src="./js/send-email.js"></script>
 </head>
 
 <body ng-controller="MainController as main">
@@ -21,15 +27,17 @@
             <div style="margin-top: 170px;">
             </div>
             <div class="w3-padding-16" id="toptext">
-              <a href="#" class="w3-button w3-block w3-hover-blue-grey w3-padding-16 class="w3-blue" style="text-shadow:1px 1px 0 #444">About Us</a>
+              <a href="#" class="w3-button w3-block w3-hover-blue-grey w3-padding-16" class="w3-blue" style="text-shadow:1px 1px 0 #444">About Us</a>
               <a href="#photos" class="w3-button w3-block w3-hover-blue w3-padding-16 class="w3-blue" style="text-shadow:1px 1px 0 #444">Photos</a>
               <a href="#events" class="w3-button w3-block w3-hover-cyan w3-padding-16 class="w3-blue" style="text-shadow:1px 1px 0 #444">Events</a>
               <a href="#contact" class="w3-button w3-block w3-hover-teal w3-padding-16 class="w3-blue" style="text-shadow:1px 1px 0 #444">Contact Us</a>
             </div>
         </div>
 
-
+//css
         <div id="box2" class="w3-half w3-indigo w3-panel w3-border w3-hover-border-yellow" style="height:700px">
+        // <div class="w3-half w3-indigo w3-container w3-panel w3-border w3-hover-border-yellow" style="height:700px; margin:auto">
+
 
             <div class="w3-padding-64 w3-center">
 
@@ -51,7 +59,10 @@
         <!-- Middle Section -->
         <div class="w3-row" id="row2">
 
+//css
           <div id="photos" class="w3-half w3-indigo w3-panel w3-border w3-hover-border-yellow" style="min-height:800px">
+
+         // <div id="photos" class="w3-half w3-indigo w3-container w3-panel w3-border w3-hover-border-yellow" style="min-height:800px; margin:auto">
 
             <div class="w3-padding-32">
 
@@ -124,6 +135,7 @@
                                     Declined: <input type="radio" name="Attending" value="button2">
                                     Undecided: <input type="radio" name="Attending" value="button3">
                                     <input type="submit" value="Update Event"/>
+
                                 </form>
                                 <button ng-click="main.deleteEvent(event._id)">Delete</button>
                             </div>
@@ -131,7 +143,11 @@
                     </div>
 
                     <% } else { %>
-                        <h1> PLEASE LOG-IN TO VIEW EVENTS HELD </h1>
+
+//css update
+<h1> PLEASE LOG-IN TO VIEW EVENTS HELD </h1>
+      <h1>Thanks for stopping by.  Please sign in to view our upcoming events. </h1>
+
                         <% } %>
 
                         <!-- ============================== -->
@@ -158,11 +174,14 @@
 
           </div>
 
+// css update
           <div class="w3-half w3-indigo w3-panel w3-border w3-hover-border-yellow" style="height:700px">
+
+        //  <div class="w3-half w3-indigo w3-container w3-panel w3-border w3-hover-border-yellow" style="height:700px; margin: auto">
             <div class="w3-padding-64 w3-padding-large">
               <h1>Contact Us</h1>
               <p class="w3-opacity">Send a Message for Online Support</p>
-              <form class="w3-container w3-card-2 w3-padding-32 w3-white" action="/action_page.php" target="_blank">
+              <form class="w3-container w3-card-2 w3-padding-32 w3-white" action="mailto:admin@pta.com"method="post" enctype="text/plain">
                 <div class="w3-section">
                   <label>Name</label>
                   <input class="w3-input" style="width:100%;" type="text" required name="Name">
@@ -175,14 +194,82 @@
                   <label>Message</label>
                   <input class="w3-input" style="width:100%;" type="text" required name="Message">
                 </div>
-                <button type="submit" class="w3-button w3-teal w3-right">Send</button>
+
+                <input type="submit" value="Send">
+  <input type="reset" value="Reset">
               </form>
             </div>
           </div>
         </div>
+        </div>
 
-
+//css update with line below
         <% include partials/footer.ejs %>
-    </body>
+      <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+          height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        <!-- html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        } -->
+        #floating-panel {
+          position: absolute;
+          top: 10px;
+          left: 25%;
+          z-index: 5;
+          background-color: #fff;
+          padding: 5px;
+          border: 1px solid #999;
+          text-align: center;
+          font-family: "Roboto","sans-serif";
+          line-height: 30px;
+          padding-left: 10px;
+        }
+      </style>
+    </head>
 
-</html>
+      <div>
+        <input id="address" type="textbox" value="Fiore Montessori School">
+        <input id="submit" type="button" value="Geocode">
+      </div>
+
+    </br>
+      <div id="map"></div>
+      <script>
+        function initMap() {
+          var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 8,
+            center: {lat:  38.901222, lng: -77.265259}
+          });
+          var geocoder = new google.maps.Geocoder();
+
+          document.getElementById("submit").addEventListener("click", function() {
+            geocodeAddress(geocoder, map);
+          });
+        }
+        function geocodeAddress(geocoder, resultsMap) {
+          var address = document.getElementById("address").value;
+          geocoder.geocode({"address": address}, function(results, status) {
+            if (status === "OK") {
+              resultsMap.setCenter(results[0].geometry.location);
+              var marker = new google.maps.Marker({
+                map: resultsMap,
+                position: results[0].geometry.location
+              });
+            } else {
+              alert("Geocode was not successful for the following reason: " + status);
+            }
+          });
+        }
+      </script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJuObq7p3cOYi0ot8v5YzC4rW-Mde59GA&callback=initMap">
+      </script>
+
+    </body>
+  </html>
