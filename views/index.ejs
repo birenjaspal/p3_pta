@@ -4,7 +4,7 @@
     <% include partials/header.ejs %>
     <% include partials/head.ejs %>
     <meta charset="utf-8">
-    <title>title</title>
+    <title>PTA</title>
     <script
       src="http://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -144,7 +144,6 @@
 
                         <% } %>
 
-                        <!-- ============================== -->
 
             </div>
 
@@ -192,76 +191,77 @@
   <input type="reset" value="Reset">
               </form>
             </div>
-          </div>
-        </div>
-        </div>
 
-      <style>
-        /* Always set the map height explicitly to define the size of the div
-         * element that contains the map. */
-        #map {
-          height: 100%;
-        }
-        /* Optional: Makes the sample page fill the window. */
-        <!-- html, body {
-          height: 100%;
-          margin: 0;
-          padding: 0;
-        } -->
-        #floating-panel {
-          position: absolute;
-          top: 10px;
-          left: 25%;
-          z-index: 5;
-          background-color: #fff;
-          padding: 5px;
-          border: 1px solid #999;
-          text-align: center;
-          font-family: "Roboto","sans-serif";
-          line-height: 30px;
-          padding-left: 10px;
-        }
-      </style>
-    </head>
+</div>
 
-      <div>
-        <input id="address" type="textbox" value="Fiore Montessori School">
-        <input id="submit" type="button" value="Geocode">
-      </div>
+  <style>
+    /* Always set the map height explicitly to define the size of the div
+     * element that contains the map. */
+    #map {
+      height: 100%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    <!-- html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    } -->
+    #floating-panel {
+      position: absolute;
+      top: 10px;
+      left: 25%;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+      text-align: center;
+      font-family: "Roboto","sans-serif";
+      line-height: 30px;
+      padding-left: 10px;
+    }
+  </style>
+</head>
 
-    </br>
-      <div id="map"></div>
-      <script>
-        function initMap() {
-          var map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 8,
-            center: {lat:  38.901222, lng: -77.265259}
+  <div>
+    <input id="address" type="textbox" value="Fiore Montessori School">
+    <input id="submit" type="button" value="Geocode">
+  </div>
+
+</br>
+  <div id="map"></div>
+  <script>
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 8,
+        center: {lat:  38.901222, lng: -77.265259}
+      });
+      var geocoder = new google.maps.Geocoder();
+
+      document.getElementById("submit").addEventListener("click", function() {
+        geocodeAddress(geocoder, map);
+      });
+    }
+    function geocodeAddress(geocoder, resultsMap) {
+      var address = document.getElementById("address").value;
+      geocoder.geocode({"address": address}, function(results, status) {
+        if (status === "OK") {
+          resultsMap.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+            map: resultsMap,
+            position: results[0].geometry.location
           });
-          var geocoder = new google.maps.Geocoder();
-
-          document.getElementById("submit").addEventListener("click", function() {
-            geocodeAddress(geocoder, map);
-          });
+        } else {
+          alert("Geocode was not successful for the following reason: " + status);
         }
-        function geocodeAddress(geocoder, resultsMap) {
-          var address = document.getElementById("address").value;
-          geocoder.geocode({"address": address}, function(results, status) {
-            if (status === "OK") {
-              resultsMap.setCenter(results[0].geometry.location);
-              var marker = new google.maps.Marker({
-                map: resultsMap,
-                position: results[0].geometry.location
-              });
-            } else {
-              alert("Geocode was not successful for the following reason: " + status);
-            }
-          });
-        }
-      </script>
-      <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJuObq7p3cOYi0ot8v5YzC4rW-Mde59GA&callback=initMap">
-      </script>
+      });
+    }
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJuObq7p3cOYi0ot8v5YzC4rW-Mde59GA&callback=initMap">
+  </script>
 
-              <% include partials/footer.ejs %>
+
+</div>
+</div>
     </body>
   </html>
