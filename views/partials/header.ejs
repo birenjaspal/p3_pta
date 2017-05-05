@@ -3,7 +3,11 @@
     <div class="topbar-left">
       <a id="" href="/" target="_parent" style="color: white; text-decoration: none;"><font size="5">PTA MEMBERS PORTAL</font> </a></br>
     </div>
+
     <div style="color:white;">
+
+    <div class="topbar-right" >
+
       <% if(currentUser) { %>
         Welcome <%=currentUser.username%>!
         <nav>
@@ -11,6 +15,8 @@
             <input style="color:black;" type="submit" value="Logout"/>
           </form>
         </nav>
+
+      <body>
 
       <% } else { %>
         <!-- <a href="/sessions/new">Log In</a> -->
